@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face and Gaze Detection</title>
+</head>
+<body>
+    <h1>Face and Gaze Detection</h1>
+    <button onclick="startDetection()">Start</button>
+    <button onclick="stopDetection()">Stop</button>
+    <img id="video_feed" alt="Webcam Feed">
+    <script>
+        var video = document.getElementById('video_feed');
+        var isDetectionRunning = false;
+
+        function startDetection() {
+            if (!isDetectionRunning) {
+                isDetectionRunning = true;
+                video.src = "{{ url_for('video_feed') }}";
+            }
+        }
+
+        function stopDetection() {
+            if (isDetectionRunning) {
+                isDetectionRunning = false;
+                video.src = "";
+            }
+        }
+    </script>
+</body>
+</html>

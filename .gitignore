@@ -1,0 +1,15 @@
+# Compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+dlib-19.24.2/
+venv/
+env/
+env_bak/
+
+# dlib files
+*.dat
+*.shape_predictor_68_face_landmarks.dat
